@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title></title>
+        <link href='http://fonts.googleapis.com/css?family=Roboto:700' rel='stylesheet' type='text/css'>
+        <style type="text/css">
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            body {
+                overflow-x: hidden;
+            }
+            #wrapper {
+                position: fixed;
+                height: 40px;
+                width: 100%;
+                background: rgba(90, 88, 88,.5);
+            }
+            
+            #nav {
+                list-style: none;
+                float: right;
+                position: relative;
+            }
+            #nav li {
+                float: left;
+                display: block;
+                height: 40px;
+                width: 200px;
+                text-align: center;
+                line-height: 40px;
+                font-family: 'Roboto', sans-serif;
+                font-weight: 700;
+                box-sizing:border-box;
+                color:white ;
+                border-left: 1px inline rgba(225,225,225,.5);
+                border-right: 1px inline rgba(225,225,225,.5);
+            }
+            #span {
+                height: 5px;
+                width: 200px;
+                background: white ;
+                position: absolute;
+                bottom: 0;
+                -wekit-transition: all .1s;
+            }
+            #content {width: 100%;}
+         
+            #last {
+                height: 100%;
+                width: 100%;
+            }
+          </style>
+       
+    </head>
+    <body>
+    <div id="wrapper">
+        <ul id="nav">
+            <div id="span"></div>
+            <a href="#content"><li>DESTINY</font></li></a>
+            <a href="#content1"><li>THE LAST OF US</li></a>
+            <a href="#content2"><li>GTA V</font></li></a>
+            <a href="#content3"><li>THE EVIL WITHIN</font></li></a>
+        </ul>
+    </div>
+    
+    <div id="content"><img id="last" src="img/Destiny.jpg"/></div>
+    <div id="content1"><img id="last" src="img/the-last-of-us-remastered-wide.jpg"/></div>
+    <div id="content2"><img id="last" src="img/GTAV-boom1.jpg"/></div>
+    <div id="content3"><img id="last" src="img/4-evil-within-cover-art.jpg"/></div>
+
+   <script type="text/javascript">
+        function element(){
+            var h = window.innerHeight;
+             document.getElementById('content').style.height = h+"px";
+             document.getElementById('content1').style.height = h+"px";
+             document.getElementById('content2').style.height = h+"px";
+             document.getElementById('content3').style.height = h+"px";
+            
+        }
+        
+        function slideAnimate() {
+            var i = document.getElementById('span');
+            var h = window.innerHeight;
+            var x = 2*h;
+            var y = 3*h;
+            var Yoffset  = window.pageYOffset;
+           if(Yoffset < h){
+               i.style.left = "0px";
+               
+           }
+            else if(Yoffset < (2*h)) {
+                i.style.left = "200px";
+                
+            }
+            else if(Yoffset < (3*h)) {
+                i.style.left = "400px";
+               
+            }
+            else if (Yoffset >= (3*h)){
+                 i.style.left = "600px";
+                
+            }
+            
+                      
+            
+        }
+        window.addEventListener('scroll',slideAnimate);
+        window.addEventListener('load', element);
+        window.addEventListener('resize', element);
+        
+    </script>
+<body>
+</html>
